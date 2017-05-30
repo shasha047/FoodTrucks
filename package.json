@@ -1,0 +1,36 @@
+{
+  "name": "FoodTrucks",
+  "version": "1.0.0",
+  "description": "a service that tells the user what types of food trucks might be found near a specific location on a map.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shasha047/FoodTrucks.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Express",
+    "AngulasJS",
+    "NodeJS"
+  ],
+  "author": "shashank bhatnagar",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/shasha047/FoodTrucks.git",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "bower": "^1.8.0",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {}
+}

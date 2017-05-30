@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html>-->
+<html ng-app="foodtrucks">
+    <head>
+        <title>FoodTrucks</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/png" href="/images/q.png" />
+        <link href="css\bootstrap.min.css" rel="stylesheet"/>
+        <link href="css\custom.css" rel="stylesheet"/>
+        <script type="text/javascript" src="bower_components\jquery\dist\jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components\angular\angular.min.js"></script>
+        <script type="text/javascript" src="bower_components\angular-route\angular-route.js"></script>
+        <script type="text/javascript" src="js\app.js"></script>
+    </head>
+    <body ng-controller="homeCtrl">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/quezx.png" width="20%" height="10%" style="padding-left:1%;padding-top:5%" alt="quezx logo">
+            </div>
+            <div class="col-md-4"> 
+                <center>
+                    <h1 style="">FoodTrucks</h1>
+                    <h6>Find what types of food trucks near your location</h6>
+                </center>
+            </div>
+            <div class="col-md-4"> 
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+             <center>
+                <input type="text" placeholder="enter place name" ng-model="address">
+                <button style="color:black" ng-click="getLoc(address)">
+                    Get Geolocation
+                </button>
+             </center>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <center>
+                <input type="text" placeholder="latitude" ng-model="lat" id="lat" >
+                <input type="text" placeholder="longitude" ng-model="lng" id="lng">
+                <button style="color:black" ng-click="findtrucks(lat,lng)">
+                    Search FoodTrucks
+                </button>
+            </center>
+        </div>
+        <div class="row">
+            <center>
+                <h4>Or </h4><h4> Click on the Map to get the location to find FoodTrucks</h4>
+            </center>
+        </div>
+        <div class="row" style="background: lightgrey" width="100%">
+            <br>
+            <div class="col-md-7">
+                
+                    <div id="map" style="width:100%;height:100%;background:yellow"></div>
+                    <!--width:400px;height:400px-->
+                    <!--<script type="text/javascript" src="js\app.js"></script>-->
+
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4gDZWE79y5IbS7gI-IIJFO0ZpWOFdQNE&callback=myMap" type="text/javascript"></script>
+                    <br>
+                    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4gDZWE79y5IbS7gI-IIJFO0ZpWOFdQNE&callback=mynewMap" type="text/javascript"></script>-->
+            </div>
+            <div class="col-md-5">
+                <h4 style="color:black">FoodTrucks near selected location are: </h4>
+                <div style="color:black">
+                    <ul ng-repeat="ftruck in ftrucks" >
+                        <!--<td>{{$index + 1}</td>-->
+                        <li><ul>
+                        <li>{{$index + 1}} {{ftruck["name"]}}</li>
+                        <li>{{ftruck["foodtype"]}}</li>
+                        </ul></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+            <p class="text-muted text-center">
+                <a href="https://www.quezx.com/" target="_blank"><img src="/images/quezx.png" height="26" alt="QuezX Quetzal"/></a>
+            </p>
+
+            <p class="text-muted text-center">
+                <small>&copy; 2017 QuezX</small>
+            </p>
+            </div>
+        </footer>
+    </body>
+</html>
